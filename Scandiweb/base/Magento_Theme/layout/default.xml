@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container name="header.top" label="freeShipping" before="-"
+                       htmlTag="div" htmlClass="header-div">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="header_free_shipping" before="-"
+                       template="Magento_Theme::custom.phtml"
+                       ifconfig="carriers/freeshipping/active">
+                </block>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="page.bottom.container">
+            <container name="page.bottom" label="subscription" htmlTag="div" htmlClass="content"/>
+        </referenceContainer>
+        <move element="form.subscribe" destination="page.bottom.container"/>
+    </body>
+</page>
